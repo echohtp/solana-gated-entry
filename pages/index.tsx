@@ -55,19 +55,21 @@ const Home: NextPage = () => {
           }
         })
         .then(res => setNfts(res.data.nfts))
-        .then(()=>{
-          nfts.map((e)=>{
-            if (approvedAccounts.includes(e.address)){
-              console.log('found one ')
-              setAllowed(true)
-            }
-          })
-        })
     } else {
       setNfts([])
       setAllowed(false)
     }
   }, [publicKey?.toBase58()])
+
+
+  useMemo(()=>{
+    nfts.map((nft)=>{
+      if (approvedAccounts.includes(nft.address)){
+        console.log('approved')
+        setAllowed(true)
+      }
+    })
+  }, [nfts])
 
   return (
     <div>
