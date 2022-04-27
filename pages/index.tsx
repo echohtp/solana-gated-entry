@@ -86,13 +86,6 @@ const Home: NextPage = () => {
         {allowed ? <h1>✅</h1>: <h1>🚫</h1>}
       </div>
 
-      <div>
-        <ul>
-          {nfts.map((e)=>
-            <li>{e.address}</li>)}
-        </ul>
-      </div>
-
       <footer></footer>
     </div>
   )
