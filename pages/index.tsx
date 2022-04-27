@@ -8,7 +8,8 @@ import { LAMPORTS_PER_SOL, Transaction, PublicKey } from '@solana/web3.js'
 import { gql } from '@apollo/client'
 import client from '../client'
 
-
+// this is an array of approved token PDA's
+// need to find a better solution than this
 const approvedAccounts = ['bMNNqMZ7FS9Jx45Fft2KRD3ouatHjzxKmvYWaM5dARv']
 
 const Home: NextPage = () => {
